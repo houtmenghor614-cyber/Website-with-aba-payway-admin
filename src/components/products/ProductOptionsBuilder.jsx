@@ -10,8 +10,6 @@ const PRESETS = [
   { label: "Storage", name: "Storage", values: ["256GB", "512GB", "1TB"] },
 ];
 
-const empty = (name = "Option") => ({ name, values: [{ value: "", extra: 0 }] });
-
 export default function ProductOptionsBuilder({ value = [], onChange }) {
   const options = Array.isArray(value) ? value : [];
 
