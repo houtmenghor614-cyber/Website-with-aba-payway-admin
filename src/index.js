@@ -19,8 +19,22 @@ window.addEventListener(
   true
 );
 
-// Deter casual DevTools access is intentionally DISABLED during development
-// so the owner can inspect the page. Re-enable later for production if wanted.
+// Deter casual DevTools access: hide the right-click context menu (so the
+// browser's "Inspect" entry is not shown) and block common DevTools keyboard
+// shortcuts (F12, Ctrl/Cmd+Shift+I/J/C, Ctrl/Cmd+U).
+window.addEventListener("contextmenu", (event) => event.preventDefault());
+window.addEventListener("keydown", (event) => {
+  const k = (event.key || "").toUpperCase();
+  const isDevShortcut =
+    k === "F12" ||
+    (event.ctrlKey && event.shiftKey && ["I", "J", "C", "K"].includes(k)) ||
+    (event.metaKey && event.altKey && ["I", "J", "C", "U"].includes(k)) ||
+    ((event.ctrlKey || event.metaKey) && k === "U");
+  if (isDevShortcut) {
+    event.preventDefault();
+    return false;
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
