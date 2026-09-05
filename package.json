@@ -1,0 +1,29 @@
+{
+  "name": "frontend-admin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "T-Shirt Cambodia - admin panel (React + Tailwind CDN + lucide icons)",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": ["react-app"]
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1"
+  }
+}
