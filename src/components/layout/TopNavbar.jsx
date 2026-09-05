@@ -11,6 +11,7 @@ import {
 import useAuth from "../../hooks/useAuth";
 import { useNotifications } from "../../context/NotificationContext";
 import { initials } from "../../utils/constants";
+import { STORE_URL } from "../../data/navigation";
 
 export default function TopNavbar() {
   const { admin, logout } = useAuth();
@@ -122,7 +123,7 @@ export default function TopNavbar() {
       </div>
 
       <a
-        href="http://localhost:3000"
+        href={STORE_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Open storefront"

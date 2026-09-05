@@ -17,5 +17,5 @@ export const NAVIGATION = [
   { label: "Settings", to: "/admin/settings" },
 ];
 
-export const STORE_URL = "http://localhost:3000";
+export const STORE_URL = "https://website-with-aba-payway-frontend-us.vercel.app";
 export const LOGIN_URL = "/admin/login";

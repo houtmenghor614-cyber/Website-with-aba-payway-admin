@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { SIDEBAR_MENU } from "../../data/sidebarMenu";
 import { LOGO_URL } from "../../utils/constants";
+import { STORE_URL } from "../../data/navigation";
 
 const icons = {
   layoutDashboard: LayoutDashboard,
@@ -79,7 +80,7 @@ export default function Sidebar() {
       </nav>
       <div className="p-3 border-t border-white/10">
         <a
-          href="http://localhost:3000"
+          href={STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-bold text-white py-2.5 transition"
