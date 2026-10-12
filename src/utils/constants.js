@@ -1,10 +1,10 @@
 export const API_URL =
   process.env.REACT_APP_API_URL ||
-  "https://website-with-aba-payway-o1vt.onrender.com/api/v1";
+  "https://website-with-aba-payway-1.onrender.com/api/v1";
 
 export const ASSET_URL =
   process.env.REACT_APP_ASSET_URL ||
-  "https://website-with-aba-payway-o1vt.onrender.com/uploads";
+  "https://website-with-aba-payway-1.onrender.com/uploads";
 
 export const PUBLIC_URL = process.env.PUBLIC_URL || "";
 
