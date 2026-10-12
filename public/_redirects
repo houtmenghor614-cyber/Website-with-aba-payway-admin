@@ -1,0 +1,4 @@
+# SPA fallback for the admin dashboard (copied into build/ by react-scripts).
+# Kept next to netlify.toml so a drag-and-drop deploy of the build/ folder
+# still routes deep links to index.html.
+/*    /index.html   200

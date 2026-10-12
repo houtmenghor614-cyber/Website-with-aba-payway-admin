@@ -1,0 +1,33 @@
+# Netlify configuration for the T-Shirt Cambodia admin dashboard.
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # CRA treats warnings as errors when CI=true (Netlify sets it by default);
+  # keep the build green so a lint nit can never block a deploy.
+  CI = "false"
+  # Source maps are not needed in production and make the deploy much larger.
+  GENERATE_SOURCEMAP = "false"
+
+# SPA fallback: React Router owns the URLs, so a refresh on /products, /orders
+# or /settings must still render index.html instead of 404ing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Hashed CRA assets are immutable - cache them for a year.
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The HTML shell must always be revalidated so new bundle hashes are picked up.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
